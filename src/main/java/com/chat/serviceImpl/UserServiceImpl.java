@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 @Transactional
@@ -183,7 +184,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<MessageProcessResult<User>> getUserRequestByUserId(HttpSession session) {
+    public List<MessageProcessResult<User>> getUserRequestByUserId(HttpSession session, Locale locale) {
         int user_id = (int) session.getAttribute("user_id");
         logger.info("friend request from: " + user_id);
         AppUser user = userRepository.findAppUserById(user_id);
@@ -219,29 +220,55 @@ public class UserServiceImpl implements UserService {
             toUser = new User();
             toUser.setId(toTemp.getId());
             toUser.setUserName(toTemp.getUserName());
-            logger.info("fromUser:" + fromUser.toString() + ", getA_id() = " + friend.getA_id() + ", toUser" + toUser.toString() + ", getB_id() = " + friend.getB_id());
+            logger.info("fromUser:" + fromUser.toString() + ", getA_id() = " + friend.getA_id()
+                        + ", toUser" + toUser.toString() + ", getB_id() = " + friend.getB_id());
             if (friend.getA_id() == user_id) {
                 if (friend.getStatus() == Constant.ACCESS) {
-                    processResult = "<b>" + toUser.getUserName() + "</b> đã chấp nhận yêu cầu kết bạn";
+                    if(locale.toString().equals("vi")) {
+                        processResult = "<b>" + toUser.getUserName() + "</b> đã chấp nhận yêu cầu kết bạn";
+                    } else {
+                        processResult = "<b>" + toUser.getUserName() + "</b> accepted the friend request";
+                    }
                 } else if (friend.getStatus() == Constant.DENY) {
-                    processResult = "<b>" + toUser.getUserName() + "</b> đã từ chối yêu cầu kết bạn";
+                    if(locale.toString().equals("vi")) {
+                        processResult = "<b>" + toUser.getUserName() + "</b> đã từ chối yêu cầu kết bạn";
+                    } else {
+                        processResult = "<b>" + toUser.getUserName() + "</b> declined the friend request";
+                    }
                 } else if (friend.getStatus() == Constant.UNPROCESSED) {
-                    processResult = "Bạn đã yêu cầu thêm <b>" + toUser.getUserName() + "</b> làm bạn bè";
+                    if(locale.toString().equals("vi")) {
+                        processResult = "Bạn đã yêu cầu thêm <b>" + toUser.getUserName() + "</b> làm bạn bè";
+                    } else {
+                        processResult = "You have requested <b>" + toUser.getUserName() + "</b> be friend";
+                    }
                 }
                 logger.info("processResult: " + processResult);
             } else if (friend.getA_id() != user_id) {
                 if (friend.getStatus() == Constant.ACCESS) {
-                    processResult = "Bạn đã chấp nhận <b>" + fromUser.getUserName() + "</b> làm bạn bè";
+                    if(locale.toString().equals("vi")) {
+                        processResult = "Bạn đã chấp nhận <b>" + fromUser.getUserName() + "</b> làm bạn bè";
+                    } else {
+                        processResult = "You have accepted <b>" + fromUser.getUserName() + "</b>";
+                    }
                 } else if (friend.getStatus() == Constant.DENY) {
-                    processResult = "Bạn đã từ chối <b>" + fromUser.getUserName() + "</b>";
+                    if(locale.toString().equals("vi")) {
+                        processResult = "Bạn đã từ chối <b>" + fromUser.getUserName() + "</b>";
+                    } else {
+                        processResult = "You have declined <b>" + fromUser.getUserName() + "</b>";
+                    }
                 } else if (friend.getStatus() == Constant.UNPROCESSED) {
-                    processResult = "<b>" + fromUser.getUserName() + "</b> Yêu cầu thêm bạn làm bạn";
+                    if(locale.toString().equals("vi")) {
+                        processResult = "<b>" + fromUser.getUserName() + "</b> yêu cầu thêm bạn làm bạn";
+                    } else {
+                        processResult = "<b>" + fromUser.getUserName() + "</b> ask to be your friend";
+                    }
                 }
                 logger.info("processResult: " + processResult);
             }
             messageProcessResult = new MessageProcessResult<>(fromUser, toUser, friend.getStatus(), processResult);
             messageProcessResultList.add(messageProcessResult);
-            logger.info("messageProcessResult" + messageProcessResult.toString() + ", " + messageProcessResultList.toString());
+            logger.info("messageProcessResult" + messageProcessResult.toString() + ", "
+                        + messageProcessResultList.toString());
         }
         return messageProcessResultList;
     }

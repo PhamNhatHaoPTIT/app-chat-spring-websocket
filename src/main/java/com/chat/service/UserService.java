@@ -4,6 +4,7 @@ import com.chat.model.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Locale;
 
 public interface UserService {
     AppUser getUserInfo(int user_id);
@@ -15,5 +16,5 @@ public interface UserService {
     Pager<User> findUserByUserName(int current_page, int page_size, String userName, int user_id);
     void saveFriendRequest(Message message);
     void processUserRequest(Friend friend);
-    List<MessageProcessResult<User>> getUserRequestByUserId(HttpSession session);
+    List<MessageProcessResult<User>> getUserRequestByUserId(HttpSession session, Locale locale);
 }

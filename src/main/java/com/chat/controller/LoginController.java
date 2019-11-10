@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Locale;
 
 @Controller
 public class LoginController {
@@ -59,7 +58,6 @@ public class LoginController {
 
     @RequestMapping(value = "loginOut", method = RequestMethod.GET)
     public @ResponseBody Result loginOut(HttpSession session) {
-        int user_id = (int) session.getAttribute("user_id");
         session.removeAttribute("user_id");
         return ResultUtil.success(0, "Đăng xuất thành công");
     }

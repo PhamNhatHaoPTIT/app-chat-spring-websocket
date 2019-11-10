@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,30 +29,35 @@
             <div class="chat" data-user-id="${user_id}">
             </div>
             <div class="input-text">
-                <textarea id="content" style="width: 446px; height: 150px;" class="form-control" placeholder="Vui lòng nhập nội dung tin nhắn ở đây"></textarea>
-                <button type="button" id="loginOut" class="btn btn-primary">Thoát ra</button>
-                <button type="button" id="sendMessage" style="float: right;margin-top: 3px;" class="btn btn-primary" data-to-user-id="">Send</button>
+                <textarea id="content" style="width: 446px; height: 150px;" class="form-control" placeholder="Enter your message" ></textarea>
+                <button type="button" id="loginOut" class="btn btn-primary"> <spring:message code="label.out" /> </button>
+                <button type="button" id="sendMessage" style="float: right;margin-top: 3px;" class="btn btn-primary" data-to-user-id="">
+                    <spring:message code="label.send" />
+                </button>
             </div>
         </div>
         <div class="col-md-2 settingsbox">
             <div id="settings">
-                <span class="add-friend span-select">Thêm bạn</span><span class="system-message">Thông báo</span>
+                <span class="add-friend span-select"> <spring:message code="label.add" /> </span>
+                <span class="system-message"> <spring:message code="label.notification" /> </span>
             </div>
             <div id="add-user" style="display: block;">
-                <span>Nhập tên người dùng bạn muốn thêm làm bạn bè</span>
+                <span> <spring:message code="label.friend-name" /> </span>
                 <input type="text" style="font-size: 12px; width: 140px; display: inline-block;" class="form-control" id="userName" maxlength="20"/>
-                <button type="button" class="btn btn-primary" id="find-user">Tìm</button>
+                <button type="button" class="btn btn-primary" id="find-user"> <spring:message code="btn.search" /> </button>
                 <div id="find-result-list">
                     <ul>
                     </ul>
                 </div>
                 <nav>
                     <ul class="add-friend-pager pager" data-current-page="1" data-total-page="1">
-                        <li><a href="javascript:;" class="prev" style="display: none;">Trang trước</a></li>
-                        <li><a href="javascript:;" class="next">Trang tiếp theo</a></li>
+                        <li><a href="javascript:;" class="prev" style="display: none;"> <spring:message code="label.prev" /> </a></li>
+                        <li><a href="javascript:;" class="next"> <spring:message code="label.next" /> </a></li>
                     </ul>
                     <ul class="add-friend-pager pager" style="margin-top: -10px;">
-                        <li>Đầu tiên<span>1</span>/<span>3</span>Trang</li>
+                        <li> <spring:message code="label.first" /> <span>1</span>/<span>3</span>
+                             <spring:message code="label.page" />
+                        </li>
                     </ul>
                 </nav>
             </div>

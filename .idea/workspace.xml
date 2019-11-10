@@ -7,10 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ef0da83-5280-4d33-a4ca-a6a08a8c9a43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/resourceBundles.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/springconfig/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springconfig/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/message/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/message/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/message/messages_vi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/message/messages_vi.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/chat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/chat.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/message/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/message/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/message/messages_vi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/message/messages_vi.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/jsp/chat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/jsp/chat.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/logs/ChatWithWebSocket.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/logs/ChatWithWebSocket.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/message/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/message/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/message/messages_vi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/message/messages_vi.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,6 +212,7 @@
       <workItem from="1572419722862" duration="50000" />
       <workItem from="1572497208149" duration="319000" />
       <workItem from="1573310236142" duration="6730000" />
+      <workItem from="1573393640415" duration="6574000" />
     </task>
     <servers />
   </component>

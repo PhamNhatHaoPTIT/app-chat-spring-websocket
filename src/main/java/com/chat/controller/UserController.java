@@ -14,6 +14,7 @@ import org.springframework.web.socket.TextMessage;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
 public class UserController {
@@ -38,7 +39,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "sendFriendRequest", method = RequestMethod.POST)
-    public @ResponseBody Result sendFriendRequest(@RequestBody Message message) {
+    public @ResponseBody Result sendFriendRequest(@RequestBody Message message, Locale locale) {
+        String msg = "";
         logger.info("send friend request：" + message.toString());
         message.setMessage_type(Constant.VERIFY_MESSAGE);
         try {
@@ -50,30 +52,45 @@ public class UserController {
                 logger.info("friend offline");
                 userService.saveFriendRequest(message);
             }
-            return ResultUtil.success(0, "Gửi yêu cầu kết bạn thành công");
+            if(locale.toString().equals("vi")) {
+                msg = "Gửi yêu cầu kết bạn thành công";
+            } else {
+                msg = "Sending successful friend request";
+            }
+            return ResultUtil.success(0, msg);
         } catch (IOException e) {
             logger.info("LoginController, sendMessage() " + e.getMessage());
             e.printStackTrace();
             return ResultUtil.error(1, e.getMessage());
         }
-
     }
 
     @RequestMapping(value = "processUserRequest", method = RequestMethod.POST)
-    public @ResponseBody Result<Friend> processUserRequest(@RequestBody Friend friend) {
+    public @ResponseBody Result<Friend> processUserRequest(@RequestBody Friend friend, Locale locale) {
         userService.processUserRequest(friend);
+        String msg = "";
         AppUser user = userService.getUserInfo(friend.getA_id());
         if (friend.getStatus() == Constant.ACCESS) {
-            return ResultUtil.success(friend, "Bạn đã chấp nhận yêu cầu kết bạn của: <b>" + user.getUserName() + "</b>");
+            if(locale.toString().equals("vi")) {
+                msg = "Bạn đã chấp nhận yêu cầu kết bạn của: <b>" + user.getUserName() + "</b>";
+            } else {
+                msg = "You have accepted your friend request of: <b>" + user.getUserName() + "</b>";
+            }
+            return ResultUtil.success(friend, msg);
         } else if (friend.getStatus() == Constant.DENY) {
-            return ResultUtil.success(friend, "Bạn đã từ chối yêu cầu kết bạn của: <b>" + user.getUserName() + "</b>");
+            if(locale.toString().equals("vi")) {
+                msg = "Bạn đã từ chối yêu cầu kết bạn của: <b>" + user.getUserName() + "</b>";
+            } else {
+                msg = "You have declined your friend request of: <b>" + user.getUserName() + "</b>";
+            }
+            return ResultUtil.success(friend, msg);
         }
         return null;
     }
 
     @RequestMapping(value = "getVerificationResult", method = RequestMethod.GET)
-    public @ResponseBody List<MessageProcessResult<User>> getVerificationResult(HttpSession session) {
-        List<MessageProcessResult<User>> messageProcessResultList = userService.getUserRequestByUserId(session);
+    public @ResponseBody List<MessageProcessResult<User>> getVerificationResult(HttpSession session, Locale locale) {
+        List<MessageProcessResult<User>> messageProcessResultList = userService.getUserRequestByUserId(session, locale);
         return messageProcessResultList;
     }
 
