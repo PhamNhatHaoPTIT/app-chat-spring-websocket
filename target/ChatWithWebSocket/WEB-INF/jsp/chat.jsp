@@ -10,7 +10,7 @@
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/chat.css" rel="stylesheet" type="text/css">
 </head>
-<body style="background-color:white;">
+<body style="background-color:#27ae60;">
 <div class="container">
     <div class="row" style="margin-top: 5%;">
         <div class="col-md-offset-2 col-md-8">
@@ -18,25 +18,32 @@
 
             </div>
         </div>
-        <div class="col-md-offset-2 col-md-6 chatbox">
-            <div class="user-list" data-user-list-length="${fn:length(userList)}">
-                <c:forEach items="${userList}" var="user">
+    </div>
+    <div class="row">
+        <div class="col-md-8 chatbox">
+            <div class="sidepanel">
+                <div class="wrap">
+                    <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
+                    <p>${user.userName}</p>
+                </div>
+                <div class="user-list" data-user-list-length="${fn:length(userList)}">
+                    <c:forEach items="${userList}" var="user">
                     <span class="user message" data-user-list-id="${user.id}">
-                        <img src="static/images/avatar.jpg" alt="avatar" class="avatar"><span>${user.userName}</span>
+                        <img src="http://emilcarlsson.se/assets/rachelzane.png" alt="avatar" class="avatar"><span>${user.userName}</span>
                     </span>
-                </c:forEach>
+                    </c:forEach>
+                </div>
             </div>
             <div class="chat" data-user-id="${user_id}">
             </div>
             <div class="input-text">
-                <textarea id="content" style="width: 446px; height: 150px;" class="form-control" placeholder="Enter your message" ></textarea>
-                <button type="button" id="loginOut" class="btn btn-primary"> <spring:message code="label.out" /> </button>
-                <button type="button" id="sendMessage" style="float: right;margin-top: 3px;" class="btn btn-primary" data-to-user-id="">
+                <textarea id="content" style="width: 89%; height: 87%;" class="form-control" placeholder="Enter your message" ></textarea>
+                <button type="button" id="sendMessage" style="float: right;" class="btn btn-primary" data-to-user-id="">
                     <spring:message code="label.send" />
                 </button>
             </div>
         </div>
-        <div class="col-md-2 settingsbox">
+        <div class="col-md-4 settingsbox">
             <div id="settings">
                 <span class="add-friend span-select"> <spring:message code="label.add" /> </span>
                 <span class="system-message"> <spring:message code="label.notification" /> </span>
@@ -56,7 +63,7 @@
                     </ul>
                     <ul class="add-friend-pager pager" style="margin-top: -10px;">
                         <li> <spring:message code="label.first" /> <span>1</span>/<span>3</span>
-                             <spring:message code="label.page" />
+                            <spring:message code="label.page" />
                         </li>
                     </ul>
                 </nav>
