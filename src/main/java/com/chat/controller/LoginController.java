@@ -41,6 +41,7 @@ public class LoginController {
         temp.setPassword(user2.getPassword());
         if (user2 != null) {
             session.setAttribute("user_id", user2.getId());
+            userService.updateUserStatus(user2.getId(), 1);
             return ResultUtil.success(temp);
         } else {
             return ResultUtil.error(1, "Sai thông tin đăng nhập");

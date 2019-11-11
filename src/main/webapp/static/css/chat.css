@@ -257,3 +257,21 @@ button#sendMessage {
 .chatbox .chat::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+.online {
+    background: #2ecc71;
+}
+
+.busy {
+    background: #e74c3c;
+}
+
+.contact-status {
+    position: absolute;
+    left: 0;
+    margin: 5px 0 0px 11px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #2c3e50;
+}

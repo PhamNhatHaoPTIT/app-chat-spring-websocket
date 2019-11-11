@@ -20,6 +20,7 @@ public class AppUser implements Serializable {
     private String userName;
     private String password;
     private Timestamp add_time;
+    private int status;
 
     @OneToMany(mappedBy = "a", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @Fetch(FetchMode.SUBSELECT)
@@ -105,6 +106,14 @@ public class AppUser implements Serializable {
 
     public void setToMessages(List<AppMessage> toMessages) {
         this.toMessages = toMessages;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override

@@ -29,6 +29,14 @@
                 <div class="user-list" data-user-list-length="${fn:length(userList)}">
                     <c:forEach items="${userList}" var="user">
                     <span class="user message" data-user-list-id="${user.id}">
+                        <c:choose>
+                            <c:when test="${user.status == 1}">
+                                <span class="contact-status online"></span>
+                            </c:when>
+                            <c:otherwise>
+                                <span class="contact-status busy"></span>
+                            </c:otherwise>
+                        </c:choose>
                         <img src="http://emilcarlsson.se/assets/rachelzane.png" alt="avatar" class="avatar"><span>${user.userName}</span>
                     </span>
                     </c:forEach>

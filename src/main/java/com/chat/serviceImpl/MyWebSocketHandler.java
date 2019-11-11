@@ -1,8 +1,10 @@
 package com.chat.serviceImpl;
 
+import com.chat.service.UserService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.*;
 
@@ -19,6 +21,9 @@ public class MyWebSocketHandler implements WebSocketHandler {
     private static final Map<Integer, WebSocketSession> users = new HashMap<>();
 
     private static final String CLIENT_ID = "user_id";
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
@@ -77,7 +82,9 @@ public class MyWebSocketHandler implements WebSocketHandler {
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) {
         logger.info("MyWebSocketHandler, connect websocket closed.......");
-        users.remove(getClientId(session));
+        int id = getClientId(session);
+        userService.updateUserStatus(id, 0);
+        users.remove(id);
         logger.info("total users in server：" + users.size());
     }
 

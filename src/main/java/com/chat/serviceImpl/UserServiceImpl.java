@@ -39,6 +39,7 @@ public class UserServiceImpl implements UserService {
                 temp = new User();
                 temp.setUserName(x.getB().getUserName());
                 temp.setId(x.getB().getId());
+                temp.setStatus(x.getB().getStatus());
                 userList.add(temp);
             }
         }
@@ -48,6 +49,7 @@ public class UserServiceImpl implements UserService {
                 temp = new User();
                 temp.setUserName(x.getA().getUserName());
                 temp.setId(x.getA().getId());
+                temp.setStatus(x.getA().getStatus());
                 userList.add(temp);
             }
         }
@@ -271,6 +273,13 @@ public class UserServiceImpl implements UserService {
                         + messageProcessResultList.toString());
         }
         return messageProcessResultList;
+    }
+
+    @Override
+    public void updateUserStatus(int userId, int status) {
+        AppUser user = userRepository.findAppUserById(userId);
+        user.setStatus(status);
+        userRepository.save(user);
     }
 
 }

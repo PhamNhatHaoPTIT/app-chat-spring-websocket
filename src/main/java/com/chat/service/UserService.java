@@ -17,4 +17,5 @@ public interface UserService {
     void saveFriendRequest(Message message);
     void processUserRequest(Friend friend);
     List<MessageProcessResult<User>> getUserRequestByUserId(HttpSession session, Locale locale);
+    void updateUserStatus(int userId, int status);
 }
