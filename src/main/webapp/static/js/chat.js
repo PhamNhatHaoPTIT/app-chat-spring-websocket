@@ -155,11 +155,20 @@ $(function () {
             dataType: "json",
             success: function (response) {
                 var dataUserListHtml = "";
+                var statusClass = "";
                 var dataLength = response.length;
                 for (var i = 0; i < dataLength; i++) {
-                    dataUserListHtml += "<span class=\"user message\" data-user-list-id=\"" + response[i].id + "\">" +
-                        "<img src=\"static/images/avatar.jpg\" alt=\"avatar\" class=\"avatar\">" +
-                        "<span>" + response[i].userName + "</span></span>";
+                    if(response[i].status == 1) {
+                        statusClass = "contact-status online";
+                    } else {
+                        statusClass = "contact-status busy";
+                    }
+                    dataUserListHtml +=
+                        "<span class=\"user message\" data-user-list-id=\"" + response[i].id + "\">" +
+                            "<span class=" + statusClass + ">" + "</span>" +
+                            "<span class='avatar'>" + response[i].avatar + "</span>" +
+                            "<span class='name'>" + response[i].userName + "</span>" +
+                        "</span>";
                 }
                 console.log("dataUserListHtml" + dataUserListHtml);
                 $(".user-list").html(dataUserListHtml);
@@ -436,6 +445,9 @@ $(function () {
             success: function (response) {
                 $(".system-message").click();
                 msgtips(response.msg);
+                console.log(a_id);
+                console.log(b_id);
+                console.log(status);
                 if (response.data.status == 0) {
                     getUserFriendList();
                 }

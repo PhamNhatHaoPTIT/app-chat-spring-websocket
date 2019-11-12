@@ -76,6 +76,7 @@ public class UserController {
             } else {
                 msg = "You have accepted your friend request of: <b>" + user.getUserName() + "</b>";
             }
+            friend.setStatus(0);
             return ResultUtil.success(friend, msg);
         } else if (friend.getStatus() == Constant.DENY) {
             if(locale.toString().equals("vi")) {
@@ -83,6 +84,7 @@ public class UserController {
             } else {
                 msg = "You have declined your friend request of: <b>" + user.getUserName() + "</b>";
             }
+            friend.setStatus(1);
             return ResultUtil.success(friend, msg);
         }
         return null;

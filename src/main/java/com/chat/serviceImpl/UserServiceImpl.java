@@ -184,7 +184,7 @@ public class UserServiceImpl implements UserService {
         AppUser a = userRepository.findAppUserById(friend.getA_id());
         List<AppFriend> friends = a.getFriends();
         for(AppFriend x : friends) {
-            if(x.getId() == friend.getId()) {
+            if(x.getA().getId() == friend.getA_id() && x.getB().getId() == friend.getB_id()) {
                 x.setStatus(friend.getStatus());
             }
         }
