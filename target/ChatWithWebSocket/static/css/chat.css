@@ -17,7 +17,7 @@
     float: right;
     width: 622px;
     height: 491px;
-    background-color: #fbfbfb;
+    background-color: #777;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -61,13 +61,6 @@
     padding: 3px 13px;
     margin-bottom: 5px;
 }
-
-/*.avatar {*/
-/*    border-radius: 50%;*/
-/*    width: 40px;*/
-/*    height:40px;*/
-/*    margin-right: 15px;*/
-/*}*/
 
 #settings span:hover, .span-select {
     cursor: pointer;
@@ -127,6 +120,7 @@
 
 .sender div:nth-of-type(1){
     float: left;
+    display: inline-flex;
 }
 
 .sender div:nth-of-type(2){
@@ -148,6 +142,7 @@
 
 .receiver div:nth-child(1){
     float: right;
+    display: inline-flex;
 }
 
 .receiver div:nth-of-type(2){
@@ -179,8 +174,6 @@
     right:-16px;
     top:3px;
 }
-
-/*add more css*/
 
 .sidepanel {
     float: left;
@@ -296,4 +289,16 @@ button#sendMessage {
     padding-left: 57px;
     margin-top: 9px;
     display: block;
+}
+
+.avatar_chat {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #2c3e50;
+    background-color: #256c73;
+    color: white;
+    font-size: 18px;
+    padding-top: 6px;
+    padding-left: 13px;
 }

@@ -8,6 +8,8 @@ public class Message implements Serializable, Comparable<Message> {
     private int from_user_id;
     private int to_user_id;
     private String content;
+    private String from_avatar;
+    private String to_avatar;
     private int message_type;
     private Timestamp send_time;
 
@@ -57,6 +59,22 @@ public class Message implements Serializable, Comparable<Message> {
 
     public void setSend_time(Timestamp send_time) {
         this.send_time = send_time;
+    }
+
+    public String getFrom_avatar() {
+        return from_avatar;
+    }
+
+    public void setFrom_avatar(String from_avatar) {
+        this.from_avatar = from_avatar;
+    }
+
+    public String getTo_avatar() {
+        return to_avatar;
+    }
+
+    public void setTo_avatar(String to_avatar) {
+        this.to_avatar = to_avatar;
     }
 
     @Override

@@ -8,13 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0ef0da83-5280-4d33-a4ca-a6a08a8c9a43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/model/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/chat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/chat.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/chat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/jsp/chat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/jsp/chat.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/serviceImpl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/logs/ChatWithWebSocket.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/logs/ChatWithWebSocket.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/static/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/static/css/chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/serviceImpl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +205,7 @@
       <workItem from="1573393640415" duration="8917000" />
       <workItem from="1573469428765" duration="11819000" />
       <workItem from="1573483091534" duration="2197000" />
-      <workItem from="1573556043409" duration="3343000" />
+      <workItem from="1573556043409" duration="7769000" />
     </task>
     <servers />
   </component>

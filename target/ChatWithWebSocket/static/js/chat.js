@@ -1,6 +1,7 @@
 $(function () {
-
-    var findUserByUserName = function (userName, current_page) {
+    var from_ = "";
+    var to_ = "";
+    var findUserByUserName = function(userName, current_page) {
         $.ajax({
             url: "findUserByUserName",
             type: "POST",
@@ -13,7 +14,7 @@ $(function () {
             success: function (response) {
                 console.log(response);
                 $("#find-result-list ul").html("");
-                $("#find-result-list ul").append("<li><span>Kết quả tìm kiếm:" + response.total_record + "</span></li>");
+                $("#find-result-list ul").append("<li><span>Kết quả tìm kiếm: " + response.total_record + "</span></li>");
 
                 if (response.total_page > 1) {
                     $(".add-friend-pager").css("display", "block");
@@ -23,7 +24,7 @@ $(function () {
 
                 if (response.total_record == 0) {
                     $(".add-friend-pager").css("display", "none");
-                    var msg = "Không tìm thấy username";
+                    var msg = "Không tìm thấy user";
                     msgtips(msg);
                 }
 
@@ -31,8 +32,12 @@ $(function () {
                 var length = dataList.length;
                 var dataFindResult = "";
                 for (var i = 0; i < length; i++) {
-                    dataFindResult += "<li><span>" + dataList[i].userName + "</span><button class=\"add-friend-request btn btn-primary\" " +
-                        "data-add-user-id=\"" + dataList[i].id + "\">Thêm bạn</button></li>";
+                    dataFindResult +=
+                        "<li>" +
+                            "<span>" + dataList[i].userName + "</span> " +
+                            "<button class=\"add-friend-request btn btn-primary\" " + "data-add-user-id=\"" + dataList[i].id + "\">" +
+                                            "Thêm bạn</button>" +
+                        "</li>";
                 }
 
                 $(".add-friend-pager").attr("data-current-page", response.current_page);
@@ -50,7 +55,6 @@ $(function () {
                         msgtips(msg);
                         return false;
                     }
-
                     if (to_user_id == null || to_user_id == "") {
                         var msg = "Không thể nhận được giá trị của b_id";
                         msgtips(msg);
@@ -100,20 +104,30 @@ $(function () {
             dataType: "json",
             success: function (response) {
                 console.log(response);
+                from_ = response[0].from_avatar;
+                to_ = response[0].to_avatar;
                 var dataHtmlRecord = "";
                 for (var i = 0; i < response.length; i++) {
                     if (response[i].to_user_id == to_user_id) {
                         console.log("right = " + response[i].to_user_id);
-                        dataHtmlRecord += "<div class=\"receiver\">"
-                            + "<div>" + "<img src=\"static/images/avatar.jpg\">"
-                            + "</div>" + "<div>" + "<div class=\"right_triangle\"></div>"
-                            + "<span>" + response[i].content + "</span>" + "</div>" + "</div>";
+                        dataHtmlRecord +=
+                            "<div class=\"receiver\">" +
+                                "<div>" + "<span class='avatar_chat'>" + response[i].from_avatar + "</span>" + "</div>" +
+                                "<div>" +
+                                    "<div class=\"right_triangle\">" + "</div>"
+                                    + "<span>" + response[i].content + "</span>" +
+                                "</div>" +
+                            "</div>";
                     } else if (response[i].to_user_id == login_user_id) {
                         console.log("left = " + response[i].from_user_id);
-                        dataHtmlRecord += "<div class=\"sender\">" + "<div>"
-                            + "<img src=\"static/images/avatar.jpg\">"
-                            + "</div>" + "<div>" + "<div class=\"left_triangle\"></div>"
-                            + "<span>" + response[i].content + "</span>" + "</div>" + "</div>";
+                        dataHtmlRecord +=
+                            "<div class=\"sender\">" +
+                                "<div>" + "<span class='avatar_chat'>" + response[i].to_avatar + "</span>" + "</div>" +
+                                "<div>" +
+                                    "<div class=\"left_triangle\"></div>"
+                                + "<span>" + response[i].content + "</span>" +
+                                "</div>" +
+                            "</div>";
                     }
                 }
                 $(".chat").html(dataHtmlRecord);
@@ -134,7 +148,7 @@ $(function () {
         }, 1500);
     }
 
-    var getUserFriendList = function () {
+    var getUserFriendList = function() {
         $.ajax({
             url: "getUserFriendList",
             type: "GET",
@@ -197,13 +211,15 @@ $(function () {
                     }
                 });
 
-                    $(".message").eq(0).addClass("user-select");
-                    $(".chat").append("<div class=\"sender\">" + "<div>"
-                        + "<img src=\"static/images/avatar.jpg\">"
-                        + "</div>" + "<div>" + "<div class=\"left_triangle\"></div>"
-                        + "<span>" + data.content + "</span>" + "</div>" + "</div>");
-                    var chat = document.getElementsByClassName("chat")[0];
-                    chat.scrollTop = chat.scrollHeight;
+                $(".message").eq(0).addClass("user-select");
+                $(".chat").append(
+                    "<div class=\"sender\">" + "<div>" + "<span class='avatar_chat'>" + to_ + "</span>" + "</div>" +
+                        "<div>" + "<div class=\"left_triangle\"></div>"
+                            + "<span>" + data.content + "</span>" +
+                        "</div>" +
+                    "</div>");
+                var chat = document.getElementsByClassName("chat")[0];
+                chat.scrollTop = chat.scrollHeight;
             } else if (data.message_type == 1) {
                 $("#system-message div ul").prepend
                 ("<li data-from-user-id=\"" + data.from_user_id + "\">" +
@@ -269,7 +285,7 @@ $(function () {
             success: function (response) {
                 $(".chat").append
                 ("<div class=\"receiver\">"
-                    + "<div>" + "<img src=\"static/images/avatar.jpg\">" + "</div>" +
+                    + "<div>" + "<span class='avatar_chat'>" + from_ + "</span>" + "</div>" +
                         "<div>" + "<div class=\"right_triangle\"></div>"
                         + "<span>" + response.data.content + "</span>" +
                         "</div>" +

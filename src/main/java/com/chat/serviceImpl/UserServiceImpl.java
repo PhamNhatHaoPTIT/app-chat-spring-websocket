@@ -79,7 +79,9 @@ public class UserServiceImpl implements UserService {
             temp = new Message();
             temp.setContent(x.getContent());
             temp.setFrom_user_id(x.getFrom().getId());
+            temp.setFrom_avatar((x.getFrom().getUserName().charAt(0) + "").toUpperCase());
             temp.setTo_user_id(x.getTo().getId());
+            temp.setTo_avatar((x.getTo().getUserName().charAt(0) + "").toUpperCase());
             temp.setSend_time(x.getSend_time());
             temp.setId(x.getId());
             if( x.getTo().getId() == message.getTo_user_id() &&
@@ -94,7 +96,9 @@ public class UserServiceImpl implements UserService {
             temp = new Message();
             temp.setContent(x.getContent());
             temp.setFrom_user_id(x.getFrom().getId());
+            temp.setFrom_avatar((x.getFrom().getUserName().charAt(0) + "").toUpperCase());
             temp.setTo_user_id(x.getTo().getId());
+            temp.setTo_avatar((x.getTo().getUserName().charAt(0) + "").toUpperCase());
             temp.setSend_time(x.getSend_time());
             temp.setId(x.getId());
             if( x.getFrom().getId() == message.getTo_user_id() ) {
