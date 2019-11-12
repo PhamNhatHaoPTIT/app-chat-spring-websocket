@@ -104,11 +104,10 @@ $(function () {
             dataType: "json",
             success: function (response) {
                 console.log(response);
-                from_ = response[0].from_avatar;
-                to_ = response[0].to_avatar;
                 var dataHtmlRecord = "";
                 for (var i = 0; i < response.length; i++) {
                     if (response[i].to_user_id == to_user_id) {
+                        from_ = response[0].from_avatar;
                         console.log("right = " + response[i].to_user_id);
                         dataHtmlRecord +=
                             "<div class=\"receiver\">" +
@@ -119,6 +118,7 @@ $(function () {
                                 "</div>" +
                             "</div>";
                     } else if (response[i].to_user_id == login_user_id) {
+                        to_ = response[0].to_avatar;
                         console.log("left = " + response[i].from_user_id);
                         dataHtmlRecord +=
                             "<div class=\"sender\">" +
