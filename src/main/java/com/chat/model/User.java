@@ -5,6 +5,7 @@ public class User {
     private String userName;
     private String password;
     private int status;
+    private String avatar;
 
     public int getId() {
         return id;
@@ -36,6 +37,14 @@ public class User {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     @Override

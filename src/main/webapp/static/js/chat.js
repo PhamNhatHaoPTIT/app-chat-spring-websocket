@@ -13,7 +13,7 @@ $(function () {
             success: function (response) {
                 console.log(response);
                 $("#find-result-list ul").html("");
-                $("#find-result-list ul").append("<li><span>Kết quả tìm kiếm:" + response.total_record + "</span></li>");
+                $("#find-result-list ul").append("<li><span>Kết quả tìm kiếm: " + response.total_record + "</span></li>");
 
                 if (response.total_page > 1) {
                     $(".add-friend-pager").css("display", "block");
@@ -23,7 +23,7 @@ $(function () {
 
                 if (response.total_record == 0) {
                     $(".add-friend-pager").css("display", "none");
-                    var msg = "Không tìm thấy username";
+                    var msg = "Không tìm thấy user";
                     msgtips(msg);
                 }
 

@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
                 temp.setUserName(x.getB().getUserName());
                 temp.setId(x.getB().getId());
                 temp.setStatus(x.getB().getStatus());
+                temp.setAvatar((x.getB().getUserName().charAt(0) + "").toUpperCase());
                 userList.add(temp);
             }
         }
@@ -50,6 +51,7 @@ public class UserServiceImpl implements UserService {
                 temp.setUserName(x.getA().getUserName());
                 temp.setId(x.getA().getId());
                 temp.setStatus(x.getA().getStatus());
+                temp.setAvatar((x.getA().getUserName().charAt(0) + "").toUpperCase());
                 userList.add(temp);
             }
         }

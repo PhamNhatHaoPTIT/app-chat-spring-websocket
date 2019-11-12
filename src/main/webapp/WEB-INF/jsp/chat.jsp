@@ -37,7 +37,7 @@
                                 <span class="contact-status busy"></span>
                             </c:otherwise>
                         </c:choose>
-                        <img src="http://emilcarlsson.se/assets/rachelzane.png" alt="avatar" class="avatar"><span>${user.userName}</span>
+                        <span class="avatar">${user.avatar}</span><span class="name">${user.userName}</span>
                     </span>
                     </c:forEach>
                 </div>
