@@ -107,7 +107,7 @@ $(function () {
                 var dataHtmlRecord = "";
                 for (var i = 0; i < response.length; i++) {
                     if (response[i].to_user_id == to_user_id) {
-                        from_ = response[0].from_avatar;
+                        from_ = response[i].from_avatar;
                         console.log("right = " + response[i].to_user_id);
                         dataHtmlRecord +=
                             "<div class=\"receiver\">" +
@@ -118,11 +118,11 @@ $(function () {
                                 "</div>" +
                             "</div>";
                     } else if (response[i].to_user_id == login_user_id) {
-                        to_ = response[0].to_avatar;
+                        to_ = response[i].from_avatar;
                         console.log("left = " + response[i].from_user_id);
                         dataHtmlRecord +=
                             "<div class=\"sender\">" +
-                                "<div>" + "<span class='avatar_chat'>" + response[i].to_avatar + "</span>" + "</div>" +
+                                "<div>" + "<span class='avatar_chat'>" + response[i].from_avatar + "</span>" + "</div>" +
                                 "<div>" +
                                     "<div class=\"left_triangle\"></div>"
                                 + "<span>" + response[i].content + "</span>" +
