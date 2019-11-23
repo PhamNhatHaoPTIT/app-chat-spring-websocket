@@ -8,23 +8,25 @@
   <component name="ChangeListManager">
     <list default="true" id="0ef0da83-5280-4d33-a4ca-a6a08a8c9a43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/interceptor/WebSocketInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/interceptor/WebSocketInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/model/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/MyWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/MyWebSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/tools/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/tools/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/chat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/chat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/serviceImpl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/chat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/MessageController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/MessageController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/controller/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/interceptor/WebSocketInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/interceptor/WebSocketInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/model/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/model/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/serviceImpl/MyWebSocketHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/serviceImpl/MyWebSocketHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/classes/com/chat/serviceImpl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/logs/ChatWithWebSocket.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/WEB-INF/logs/ChatWithWebSocket.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/static/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/static/css/chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatWithWebSocket/static/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatWithWebSocket/static/js/chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chat/controller/MessageController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/controller/MessageController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chat/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/controller/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/interceptor/WebSocketInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/interceptor/WebSocketInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/model/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/model/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/serviceImpl/MyWebSocketHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/serviceImpl/MyWebSocketHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chat/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chat/serviceImpl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -219,6 +221,7 @@
       <workItem from="1574000735077" duration="1095000" />
       <workItem from="1574040817985" duration="40000" />
       <workItem from="1574472141713" duration="8747000" />
+      <workItem from="1574510148637" duration="7953000" />
     </task>
     <servers />
   </component>

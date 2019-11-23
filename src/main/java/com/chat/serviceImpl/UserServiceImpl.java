@@ -9,10 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 @Transactional
@@ -82,7 +80,12 @@ public class UserServiceImpl implements UserService {
             temp.setFrom_avatar((x.getFrom().getUserName().charAt(0) + "").toUpperCase());
             temp.setTo_user_id(x.getTo().getId());
             temp.setTo_avatar((x.getTo().getUserName().charAt(0) + "").toUpperCase());
+
             temp.setSend_time(x.getSend_time());
+            Date date = new Date(x.getSend_time().getTime());
+            SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+            temp.setSend(format.format(date));
+
             temp.setId(x.getId());
             if( x.getTo().getId() == message.getTo_user_id() &&
                 x.getFrom().getId() == message.getFrom_user_id() ) {
@@ -99,7 +102,12 @@ public class UserServiceImpl implements UserService {
             temp.setFrom_avatar((x.getFrom().getUserName().charAt(0) + "").toUpperCase());
             temp.setTo_user_id(x.getTo().getId());
             temp.setTo_avatar((x.getTo().getUserName().charAt(0) + "").toUpperCase());
+
             temp.setSend_time(x.getSend_time());
+            Date date = new Date(x.getSend_time().getTime());
+            SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+            temp.setSend(format.format(date));
+
             temp.setId(x.getId());
             if( x.getFrom().getId() == message.getTo_user_id() ) {
                 messageList.add(temp);

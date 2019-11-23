@@ -302,3 +302,26 @@ button#sendMessage {
     padding-top: 6px;
     padding-left: 13px;
 }
+
+.time_right {
+    float: right;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    color: indianred;
+    margin-right: -11px;
+    margin-left: 12px;
+    margin-top: 3px;
+}
+
+.time_left {
+    float: left;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    color: #cecece;
+    margin-right: -11px;
+    margin-right: 12px;
+    margin-left: -11px;
+    margin-top: 3px;
+}

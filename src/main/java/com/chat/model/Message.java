@@ -12,6 +12,7 @@ public class Message implements Serializable, Comparable<Message> {
     private String to_avatar;
     private int message_type;
     private Timestamp send_time;
+    private String send;
 
     public long getId() {
         return id;
@@ -77,6 +78,14 @@ public class Message implements Serializable, Comparable<Message> {
         this.to_avatar = to_avatar;
     }
 
+    public String getSend() {
+        return send;
+    }
+
+    public void setSend(String send) {
+        this.send = send;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -88,7 +97,6 @@ public class Message implements Serializable, Comparable<Message> {
                 ", \"send_time\":" + send_time.getTime() +
                 '}';
     }
-
 
     @Override
     public int compareTo(Message message) {

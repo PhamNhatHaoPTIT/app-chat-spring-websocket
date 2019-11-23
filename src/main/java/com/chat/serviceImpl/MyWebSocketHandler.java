@@ -93,6 +93,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
         message.setFrom_avatar("H");
         message.setId(1l);
         message.setSend_time(new Timestamp(System.currentTimeMillis()));
+        message.setSend("");
         for(AppFriend x : user.getFriends()) {
             if(x.getB().getStatus() == 1) {
                 sendMessageToUser(x.getB().getId(), new TextMessage(message.toString()));

@@ -15,6 +15,8 @@ import org.springframework.web.socket.TextMessage;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -34,6 +36,9 @@ public class MessageController {
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
     public @ResponseBody Result<Message> sendMessage(@RequestBody Message message) {
+        Date date = new Date(message.getSend_time().getTime());
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        message.setSend(format.format(date));
         try {
             logger.info(message.getFrom_user_id() + "send message to: " + message.getTo_user_id());
             if (myWebSocketHandler.checkUserIfOnline(message.getTo_user_id())) {

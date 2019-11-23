@@ -115,6 +115,7 @@ $(function () {
                                 "<div>" +
                                     "<div class=\"right_triangle\">" + "</div>"
                                     + "<span>" + response[i].content + "</span>" +
+                                    "<div class='time_right'>" + "<span>" + response[i].send + "</span>" + "</div>" +
                                 "</div>" +
                             "</div>";
                     } else if (response[i].to_user_id == login_user_id) {
@@ -125,7 +126,8 @@ $(function () {
                                 "<div>" + "<span class='avatar_chat'>" + response[i].from_avatar + "</span>" + "</div>" +
                                 "<div>" +
                                     "<div class=\"left_triangle\"></div>"
-                                + "<span>" + response[i].content + "</span>" +
+                                    + "<span>" + response[i].content + "</span>" +
+                                    "<div class='time_left'>" + "<span>" + response[i].send + "</span>" + "</div>" +
                                 "</div>" +
                             "</div>";
                     }
@@ -219,12 +221,14 @@ $(function () {
                         getChatRecord(from_user_id);
                     }
                 });
-
+                var send_time = new Date();
+                var time_string = send_time.getHours() + ":" + send_time.getMinutes();
                 $(".message").eq(0).addClass("user-select");
                 $(".chat").append(
                     "<div class=\"sender\">" + "<div>" + "<span class='avatar_chat'>" + to_ + "</span>" + "</div>" +
                         "<div>" + "<div class=\"left_triangle\"></div>"
                             + "<span>" + data.content + "</span>" +
+                            "<div class='time_left'>" + "<span>" + time_string + "</span>" + "</div>" +
                         "</div>" +
                     "</div>");
                 var chat = document.getElementsByClassName("chat")[0];
@@ -285,6 +289,7 @@ $(function () {
             return false;
         }
         var send_time = new Date();
+        var time_string = send_time.getHours() + ":" + send_time.getMinutes();
         $.ajax({
             url: "message",
             type: "POST",
@@ -293,7 +298,8 @@ $(function () {
                 to_user_id: to_user_id,
                 content: message_content,
                 send_time: send_time,
-                message_type: 0
+                message_type: 0,
+                send: time_string
             }),
             dataType: "json",
             contentType: "application/json",
@@ -302,7 +308,8 @@ $(function () {
                 ("<div class=\"receiver\">"
                     + "<div>" + "<span class='avatar_chat'>" + from_ + "</span>" + "</div>" +
                         "<div>" + "<div class=\"right_triangle\"></div>"
-                        + "<span>" + response.data.content + "</span>" +
+                            + "<span>" + response.data.content + "</span>" +
+                            "<div class='time_right'>" + "<span>" + response.data.send + "</span>" + "</div>" +
                         "</div>" +
                     "</div>"
                 );
