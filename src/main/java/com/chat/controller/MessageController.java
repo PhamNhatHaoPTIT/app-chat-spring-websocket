@@ -1,6 +1,5 @@
 package com.chat.controller;
 
-import com.chat.model.AppUser;
 import com.chat.model.Message;
 import com.chat.model.Result;
 import com.chat.service.MessageService;

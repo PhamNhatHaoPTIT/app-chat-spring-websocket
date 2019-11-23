@@ -239,6 +239,12 @@ $(function () {
                     "<button class=\"user-request btn btn-primary\" user-status=\"1\">Từ chối</button>" +
                     "</li>"
                 );
+            } else if(data.message_type == 2) {
+                console.log("user online");
+                $("[data-user-list-id="+data.from_user_id+"]").children("span.contact-status").removeClass("busy").addClass("online");
+            } else if(data.message_type == 3) {
+                console.log("user offline");
+                $("[data-user-list-id="+data.from_user_id+"]").children("span.contact-status").removeClass("online").addClass("busy");
             }
             console.log("websocket listen message");
         };

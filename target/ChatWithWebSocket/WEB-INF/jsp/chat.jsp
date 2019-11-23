@@ -23,7 +23,7 @@
         <div class="col-md-8 chatbox">
             <div class="sidepanel">
                 <div class="wrap">
-                    <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
+                    <img id="profile-img" src="static/images/avatar.png" class="online" alt="" />
                     <p>${user.userName}</p>
                 </div>
                 <div class="user-list" data-user-list-length="${fn:length(userList)}">

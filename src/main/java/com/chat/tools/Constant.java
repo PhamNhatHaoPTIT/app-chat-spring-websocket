@@ -14,6 +14,8 @@ public class Constant {
 
     public final static int NORMAL_MESSAGE = 0;
     public final static int VERIFY_MESSAGE = 1;
+    public final static int ONLINE_MESSAGE = 2;
+    public final static int OFFLINE_MESSAGE = 3;
     // request is access
     public final static int ACCESS = 0;
     // request is deny
