@@ -41,6 +41,11 @@ public class LoginController {
         }
     }
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
+        return "home";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public @ResponseBody Result login(HttpSession session, @RequestBody AppUser user, Locale locale) {
         AppUser user2 = userService.getUserByUserNameAndPassword(user);

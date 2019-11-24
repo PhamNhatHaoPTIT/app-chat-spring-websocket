@@ -6,9 +6,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Chat</title>
+    <title>Zola Chat</title>
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/chat.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
 </head>
 <body style="background-color:#27ae60;">
 <div class="container">
