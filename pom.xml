@@ -18,7 +18,7 @@
     <spring.version>4.3.5.RELEASE</spring.version>
     <mybatis.version>3.4.1</mybatis.version>
       <hibernate.version>5.4.1.Final</hibernate.version>
-      <hibernate.validator>5.4.1.Final</hibernate.validator>
+      <hibernate.validator>5.4.2.Final</hibernate.validator>
   </properties>
 
     <dependencies>
