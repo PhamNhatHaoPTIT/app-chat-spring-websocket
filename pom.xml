@@ -17,7 +17,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <spring.version>4.3.5.RELEASE</spring.version>
     <mybatis.version>3.4.1</mybatis.version>
-      <hibernate.version>5.4.1.Final</hibernate.version>
+      <hibernate.version>5.4.24.Final</hibernate.version>
       <hibernate.validator>5.4.1.Final</hibernate.validator>
   </properties>
 
